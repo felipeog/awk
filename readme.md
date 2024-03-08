@@ -1,9 +1,13 @@
-# Awk
+# AWK
 
 ## Exercises
 
-- [Awk exercises on Exercism](https://exercism.org/tracks/awk/exercises)
-- [Awk: Hack the Planet['s text]!](https://github.com/FreedomBen/awk-hack-the-planet)
+- [AWK exercises on Exercism](https://exercism.org/tracks/awk/exercises)
+- [AWK: Hack the Planet['s text]!](https://github.com/FreedomBen/awk-hack-the-planet)
+
+## Books
+
+- [The AWK Programming Language](https://ia803404.us.archive.org/0/items/pdfy-MgN0H1joIoDVoIC7/The_AWK_Programming_Language.pdf)
 
 ## Testing
 

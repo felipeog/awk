@@ -1,9 +1,11 @@
 {
   "name": "awk",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "bats ./exercises/**/*.bats"
   },
   "dependencies": {
-    "bats": "^1.10.0"
+    "bats": "^1.10.0",
+    "bats-assert": "github:ztombol/bats-assert",
+    "bats-support": "github:ztombol/bats-support"
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "awk",
   "scripts": {
+    "bats": "bats",
     "test": "bats ./exercises/**/*.bats"
   },
   "dependencies": {

@@ -2,5 +2,8 @@
   "name": "awk",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bats": "^1.10.0"
   }
 }

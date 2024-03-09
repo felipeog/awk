@@ -1,7 +1,7 @@
 {
   "name": "awk",
   "scripts": {
-    "bats": "bats",
+    "bats": "cd $INIT_CWD && bats",
     "test": "bats ./exercises/**/*.bats"
   },
   "dependencies": {

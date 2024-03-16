@@ -16,7 +16,7 @@ BEGIN { RS = "" }
     from = substr($1, i, 1)
     to   = substr($2, i, 1)
 
-    if (from != to )
+    if (from != to)
       differences++
   }
 

@@ -8,8 +8,9 @@ END {
 }
 
 function is_dna_valid(dna) {
-  split(dna, caracters, "")
   cursor = 1
+
+  split(dna, caracters, "")
 
   while (cursor <= length(dna)) {
     if (caracters[cursor] !~ /[ACGT]/) return 0
@@ -24,9 +25,9 @@ function get_rna_from_dna(dna) {
   map["C"] = "G"
   map["G"] = "C"
   map["T"] = "A"
+  cursor   = 1
 
   split(dna, caracters, "")
-  cursor = 1
 
   while (cursor <= length(dna)) {
     result = result map[caracters[cursor]]

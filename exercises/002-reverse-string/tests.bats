@@ -11,42 +11,42 @@ setup() {
 }
 
 @test "an empty string" {
-  run awk -f $AWK_FILE <<< ""
+  run gawk -f $AWK_FILE <<< ""
 
   assert_success
   assert_output ""
 }
 
 @test "a word" {
-  run awk -f $AWK_FILE <<< "robot"
+  run gawk -f $AWK_FILE <<< "robot"
 
   assert_success
   assert_output "tobor"
 }
 
 @test "a capitalised word" {
-  run awk -f $AWK_FILE <<< "Ramen"
+  run gawk -f $AWK_FILE <<< "Ramen"
 
   assert_success
   assert_output "nemaR"
 }
 
 @test "a sentence with punctuation" {
-  run awk -f $AWK_FILE <<< "I'm hungry!"
+  run gawk -f $AWK_FILE <<< "I'm hungry!"
 
   assert_success
   assert_output "!yrgnuh m'I"
 }
 
 @test "a palindrome" {
-  run awk -f $AWK_FILE <<< "racecar"
+  run gawk -f $AWK_FILE <<< "racecar"
 
   assert_success
   assert_output "racecar"
 }
 
 @test "an even-sized word" {
-  run awk -f $AWK_FILE <<< "drawer"
+  run gawk -f $AWK_FILE <<< "drawer"
 
   assert_success
   assert_output "reward"

@@ -1,10 +1,6 @@
-END {
-  cursor = length($0)
-  
-  split($0, letters, "")
+{
+  for (i = 1; i <= length($0); i++)
+    result = substr($0, i, 1) result
 
-  while(cursor > 0) {
-    printf "%s", letters[cursor]
-    cursor--
-  }
+  print result
 }

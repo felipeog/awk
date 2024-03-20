@@ -1,38 +1,16 @@
-END {
-  if (is_dna_valid($0)) {
-    print get_rna_from_dna($0)
-  } else {
-    print "Invalid nucleotide detected."
-    exit 1
-  }
+# https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html#index-gsub_0028_0029-function-1
+
+/[^CGTA]/ {
+  print "Invalid nucleotide detected."
+  exit 1
 }
 
-function is_dna_valid(dna) {
-  cursor = 1
+{
+  gsub("C", "*") # mark `C` to handle `G` to `C`
+  gsub("G", "C")
+  gsub("*", "G") # marked `C` to `G`
+  gsub("A", "U")
+  gsub("T", "A")
 
-  split(dna, caracters, "")
-
-  while (cursor <= length(dna)) {
-    if (caracters[cursor] !~ /[ACGT]/) return 0
-    cursor++
-  }
-
-  return 1
-}
-
-function get_rna_from_dna(dna) {
-  map["A"] = "U"
-  map["C"] = "G"
-  map["G"] = "C"
-  map["T"] = "A"
-  cursor   = 1
-
-  split(dna, caracters, "")
-
-  while (cursor <= length(dna)) {
-    result = result map[caracters[cursor]]
-    cursor++
-  }
-
-  return result
+  print
 }

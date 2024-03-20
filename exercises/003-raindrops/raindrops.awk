@@ -2,19 +2,14 @@
 # - num
 
 BEGIN {
-  if (is_divisible(num, 3))
-    printf "%s", "Pling"
+  if (num % 3 == 0)
+    result = result "Pling"
 
-  if (is_divisible(num, 5))
-    printf "%s", "Plang"
+  if (num % 5 == 0)
+    result = result "Plang"
 
-  if (is_divisible(num, 7))
-    printf "%s", "Plong"
+  if (num % 7 == 0)
+    result = result "Plong"
 
-  if (!is_divisible(num, 3) && !is_divisible(num, 5) && !is_divisible(num, 7))
-    printf "%s", num
-}
-
-function is_divisible(dividend, divisor) {
-  return dividend % divisor == 0
+  print result ? result : num
 }

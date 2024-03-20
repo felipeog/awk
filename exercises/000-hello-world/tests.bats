@@ -11,7 +11,7 @@ setup() {
 }
 
 @test "should print \"Hello, World!\"" {
-  run awk -f $AWK_FILE
+  run gawk -f $AWK_FILE
 
   assert_success
   assert_output "Hello, World!"

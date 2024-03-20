@@ -22,7 +22,7 @@ populate_test_file() {
 @test 'empty strands' {
   populate_test_file '' ''
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_success
   assert_output "0"
@@ -31,7 +31,7 @@ populate_test_file() {
 @test 'single letter identical strands' {
   populate_test_file 'A' 'A'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_success
   assert_output "0"
@@ -40,7 +40,7 @@ populate_test_file() {
 @test 'single letter different strands' {
   populate_test_file 'G' 'T'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_success
   assert_output "1"
@@ -49,7 +49,7 @@ populate_test_file() {
 @test 'long identical strands' {
   populate_test_file 'GGACTGAAATCTG' 'GGACTGAAATCTG'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_success
   assert_output "0"
@@ -58,7 +58,7 @@ populate_test_file() {
 @test 'long different strands' {
   populate_test_file 'GGACGGATTCTG' 'AGGACGGATTCT'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_success
   assert_output "9"
@@ -67,7 +67,7 @@ populate_test_file() {
 @test 'disallow first strand longer' {
   populate_test_file 'AATG' 'AAA'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_failure
   assert_output --partial "strands must be of equal length"
@@ -76,7 +76,7 @@ populate_test_file() {
 @test 'disallow second strand longer' {
   populate_test_file 'ATA' 'AGTG'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_failure
   assert_output --partial "strands must be of equal length"
@@ -85,7 +85,7 @@ populate_test_file() {
 @test 'disallow empty first strand' {
   populate_test_file '' 'G'
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_failure
   assert_output --partial "strands must be of equal length"
@@ -94,7 +94,7 @@ populate_test_file() {
 @test 'disallow empty second strand' {
   populate_test_file 'G' ''
 
-  run awk -f $AWK_FILE input.txt
+  run gawk -f $AWK_FILE input.txt
 
   assert_failure
   assert_output --partial "strands must be of equal length"
